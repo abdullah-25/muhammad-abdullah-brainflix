@@ -1,0 +1,106 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+.header {
+  // display: block;
+  @include tablet {
+    display: flex;
+    padding: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include tablet {
+      display: flex;
+      padding-right: 5rem;
+    }
+  }
+  &__logo {
+    max-height: 1.5625rem;
+    max-width: 7.5rem;
+  }
+
+  &__search-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+
+    @include tablet {
+      display: flex;
+      //flex: 1;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include desktop {
+      padding-left: 10rem;
+    }
+
+    &--search {
+      width: 85%;
+      height: 2rem;
+      background: $secondary-color-Alabaster url(../../assets/icons/search.svg)
+        left no-repeat;
+      padding: 1.2rem;
+      margin-right: 1rem;
+      border: 1px solid $secondary-color-Mercury;
+      border-radius: 0.1875rem;
+
+      @include tablet {
+        width: 15rem;
+        margin-top: 0.5rem;
+      }
+    }
+    &--profile-pic {
+      border-radius: 50%;
+      position: absolute;
+      width: 2.25rem;
+      height: 2.25rem;
+      right: 1rem;
+
+      @include tablet {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: static;
+        order: 1;
+        margin-left: 1rem;
+      }
+      @include desktop {
+      }
+    }
+    &--btn {
+      display: flex;
+      position: relative;
+      @include mobile-labels-btn-font(white);
+      background-color: $primary-color-BrainFlix-Blue;
+      border-radius: 0.1875rem;
+      color: white;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      height: 2.5rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      border: none;
+      padding-top: 0.7rem;
+      @include tablet {
+        width: 10rem;
+        margin-top: 0.5rem;
+      }
+
+      &__upload {
+        position: absolute;
+        left: 0.2rem;
+        //padding: 0.5rem;
+      }
+    }
+  }
+}

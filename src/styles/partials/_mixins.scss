@@ -1,0 +1,94 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+//desktop and tablet font style
+@mixin desktop-tablet-page-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 2.0625rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+@mixin desktop-tablet-section-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+@mixin desktop-tablet-sub-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+}
+
+@mixin desktop-tablet-body-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+@mixin desktop-tablet-labels-btn($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+// mobile fonts
+
+@mixin mobile-page-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+@mixin mobile-section-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin mobile-sub-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+}
+
+@mixin mobile-body-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin mobile-labels-btn-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}

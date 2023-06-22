@@ -1,0 +1,28 @@
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+$primary-color-BrainFlix-Black: #323232;
+$primary-color-BrainFlix-Blue: #0095ff;
+$primary-color-Silver: #afafaf;
+$primary-color-White: #ffffff;
+
+$secondary-color-BrainFlix-DarkBlack: #000000;
+$secondary-color-BrainFlix-DarkBlue: #0065ad;
+$secondary-color-Mercury: #e1e1e1;
+$secondary-color-Alabaster: #fafafa;
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+  font-size: 700;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+  font-size: 400;
+  font-weight: normal;
+}
+
+$site-font: "Avenir Next";
