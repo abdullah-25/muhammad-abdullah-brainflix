@@ -1,6 +1,8 @@
 import "./VideoDisplay.scss";
 import profilePic from "../../assets/images/Mohan-muruge.jpg";
 import addComment from "../../assets/icons/add_comment.svg";
+import viewsIcon from "../../assets/icons/views.svg";
+import likesIcon from "../../assets/icons/likes.svg";
 
 export default function VideoDisplay({ currentVideo }) {
   const {
@@ -16,60 +18,91 @@ export default function VideoDisplay({ currentVideo }) {
     video,
     views,
   } = currentVideo;
-  // console.log(comments.map((comment) => comment.id));
-
-  if (!comments) {
-    console.log(currentVideo);
-    return (
-      <>
-        <h1>Error</h1>
-      </>
-    );
-  }
 
   return (
-    <div>
-      <video controls width="300" height="300" poster={image}>
-        <source src={video}></source>
+    <div class="display">
+      <video class="display__video" controls poster={image}>
+        {/* <source src={video}></source> */}
       </video>
-      <div>
-        <div>{title}</div>
-        <div>{channel}</div>
-        <div>{timestamp}</div>
-        <div>{views}</div>
-        <div>{likes}</div>
-        <hr />
+
+      <div class="display__title">{title}</div>
+      <hr class="display__first-hr" />
+      <div class="display__details">
+        <div class="display__details--name-date">
+          <div class="display__details--name-date__channel">By {channel}</div>
+          <div class="display__details--name-date__timestamp">
+            {new Date(timestamp).toLocaleDateString()}
+          </div>
+        </div>
+        <div class="display__details--views-likes">
+          <div class="display__details--views-likes__views">
+            <img
+              src={viewsIcon}
+              class="display__details--views-likes__views--icon"
+            />
+            {views}
+          </div>
+          <div class="display__details--views-likes__likes">
+            <img
+              src={likesIcon}
+              class="display__details--views-likes__likes--icon"
+            />
+            {likes}
+          </div>
+        </div>
       </div>
-      <div>{description}</div>
-      <br></br>
-      <div>
-        <img
-          src={profilePic}
-          alt="profile-pic"
-          class="header__search-container--profile-pic"
-        />
-        <div>JOIN THE CONVERSATION</div>
-        <input
-          name="search"
-          type="search"
-          className="header__search-container--search"
-          placeholder="Add a new comment"
-        />
-        <button className="header__search-container--btn">
+      <hr />
+
+      <div class="display__description">{description}</div>
+
+      <div class="display__comments-section">
+        <div class="display__comments-section--count"> 3 Comments</div>
+        <div class="display__comments-section--outer">
           <img
-            src={addComment}
-            alt="upload-logo"
-            className="header__search-container--btn__upload"
+            src={profilePic}
+            alt="profile-pic"
+            class="display__comments-section--avatar"
           />
-          COMMENT
-        </button>
+          <div class="display__comments-section--comment-input">
+            <div class="display__comments-section--comment-input--title">
+              JOIN THE CONVERSATION
+            </div>
+            <div class="display__comments-section--comment-input--container">
+              <input
+                name="text"
+                type="text"
+                className="display__comments-section--addcomment"
+                placeholder="Add a new comment"
+              />
+              <button className="display__comments-section--btn">
+                <img
+                  src={addComment}
+                  alt="upload-logo"
+                  className="display__comments-section--btn__upload"
+                />
+                COMMENT
+              </button>
+            </div>
+          </div>
+        </div>
         <hr />
-        <div>
+        <div class="display__comments-section--comments">
           {comments.map((comment) => (
-            <div>
-              <div>{comment.name}</div>
-              <div>{comment.comment}</div>
-              <div>{comment.timestamp}</div>
+            <div class="display__comments-section--comment">
+              <div class="display__comments-section--outer-container">
+                <div class="display__comments-section--comment--image"></div>
+                <div class="display__comments-section--inner-container">
+                  <div class="display__comments-section--comment--namecontainer">
+                    <div>{comment.name}</div>
+                    <div class="display__comments-section--comment--namecontainer--date">
+                      {new Date(comment.timestamp).toLocaleDateString()}
+                    </div>
+                  </div>
+                  <div class="display__comments-section--comment--text">
+                    {comment.comment}
+                  </div>
+                </div>
+              </div>
               <hr />
             </div>
           ))}
