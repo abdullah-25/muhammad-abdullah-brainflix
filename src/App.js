@@ -8,6 +8,11 @@ import VideoDisplay from "./components/VideoDisplay/VideoDisplay";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
+
+  function updateCurrentVideo(id) {
+    setCurrentVideo(videoDetails.find((i) => i.id === id));
+  }
+
   return (
     <div className="App">
       <Header />
@@ -15,7 +20,7 @@ function App() {
       <NextVideo
         videos={videos}
         currentVideo={currentVideo}
-        Setter={setCurrentVideo}
+        Setter={updateCurrentVideo}
       />
     </div>
   );

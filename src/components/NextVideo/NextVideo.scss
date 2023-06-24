@@ -5,8 +5,28 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 4px;
+.section-title {
+  padding: 1rem;
+  @include mobile-section-header-font($primary-color-Silver);
+}
+.container {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+
+  &__img {
+    width: 6.25rem;
+    height: 4.375rem;
+    border-radius: 0.25rem;
+  }
+  &__text-container {
+    padding-left: 1rem;
+    &--title {
+      @include mobile-sub-header-font($secondary-color-BrainFlix-DarkBlack);
+      padding-bottom: 0.5rem;
+    }
+    &--channel {
+      @include mobile-body-font($secondary-color-BrainFlix-DarkBlack);
+    }
+  }
 }
