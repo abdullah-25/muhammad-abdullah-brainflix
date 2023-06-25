@@ -6,22 +6,36 @@
 }
 
 .display {
-  padding-left: 1rem;
-  padding-right: 1rem;
   &__video {
-    padding-top: 1rem;
+    margin-top: 1rem;
     width: 100%;
     background-size: cover;
+    background-color: $secondary-color-BrainFlix-DarkBlack;
+
+    @include tablet {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    @include desktop {
+      padding-left: 6.5rem;
+      padding-right: 6.5rem;
+    }
   }
 
   &__title {
+    padding-left: 1rem;
+    padding-right: 1rem;
     @include mobile-page-header-font($primary-color-BrainFlix-Black);
     padding-top: 1.5rem;
     padding-bottom: 1rem;
   }
   &__first-hr {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   &__details {
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     //justify-content: space-between;
     padding-bottom: 1rem;
