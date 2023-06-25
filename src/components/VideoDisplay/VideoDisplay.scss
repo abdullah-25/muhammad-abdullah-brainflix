@@ -28,27 +28,51 @@
     @include mobile-page-header-font($primary-color-BrainFlix-Black);
     padding-top: 1.5rem;
     padding-bottom: 1rem;
+
+    @include tablet {
+      margin-left: 1.5rem;
+    }
   }
   &__first-hr {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+      display: none;
+    }
   }
   &__details {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     display: flex;
-    //justify-content: space-between;
     padding-bottom: 1rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
     &--name-date {
       padding-right: 3rem;
       &__channel {
         padding: 1rem 1rem 0.5rem 0;
         @include mobile-sub-header-font($primary-color-BrainFlix-Black);
+
+        @include tablet {
+          padding: 0;
+          padding-right: 1.5rem;
+        }
       }
       &__timestamp {
         @include mobile-body-font($primary-color-Silver);
       }
+
+      @include tablet {
+        display: flex;
+        margin-left: 1.5rem;
+      }
     }
+
     &--views-likes {
       &__views {
         padding: 1rem 1rem 0.5rem 0;
@@ -56,6 +80,11 @@
 
         &--icon {
           padding-right: 0.3rem;
+        }
+
+        @include tablet {
+          padding: 0;
+          padding-right: 1.5rem;
         }
       }
       &__likes {
@@ -65,15 +94,44 @@
           padding-right: 0.3rem;
         }
       }
+
+      @include tablet {
+        display: flex;
+        margin-right: 1.5rem;
+      }
+    }
+
+    &--hr {
+      margin-right: 1rem;
+
+      @include tablet {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+      }
     }
   }
 
   &__description {
     @include mobile-body-font($primary-color-BrainFlix-Black);
     padding: 1rem 0 1rem 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+      margin-left: 2.5rem;
+      margin-right: 2.5rem;
+    }
   }
 
   &__comments-section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+      margin-left: 2.5rem;
+      margin-right: 2.5rem;
+    }
+
     &--count {
       @include mobile-sub-header-font($primary-color-BrainFlix-Black);
       padding-bottom: 1rem;
@@ -83,12 +141,12 @@
     }
     &--avatar {
       border-radius: 50%;
-      // position: absolute;
       width: 2.25rem;
       height: 2.25rem;
-      // left: 1rem;
       margin-right: 1rem;
       margin-top: 1rem;
+    }
+    &--btn-upload {
     }
     &--comment-input {
       &--title {
@@ -99,6 +157,11 @@
         flex-direction: column;
         width: 16rem;
         padding-bottom: 1rem;
+
+        @include tablet {
+          flex-direction: row;
+          width: 100%;
+        }
       }
     }
 
@@ -111,19 +174,30 @@
       &:active {
         border: 2px solid $primary-color-BrainFlix-Blue;
       }
+
+      @include tablet {
+        height: 2rem;
+        width: 31rem;
+        margin-right: 1rem;
+      }
     }
     &--btn {
       @include mobile-labels-btn-font(white);
       background-color: $primary-color-BrainFlix-Blue;
-      border-radius: 0.1875rem;
+      border-radius: 0.25rem;
       border: none;
-    }
-    &--btn-upload {
+      //width: 100%;
+
+      @include tablet {
+        height: 2rem;
+        width: 10rem;
+      }
     }
 
     &--outer-container {
       display: flex;
       padding-top: 1rem;
+      padding-right: 1rem;
     }
 
     &--comments {
@@ -151,5 +225,15 @@
       @include mobile-body-font($primary-color-BrainFlix-Black);
       padding-bottom: 0.5rem;
     }
+  }
+}
+
+hr {
+  margin-left: 1rem;
+  //margin-right: 1rem;
+
+  @include tablet {
+    //margin-left: 2.5rem;
+    // margin-right: 2.5rem;
   }
 }

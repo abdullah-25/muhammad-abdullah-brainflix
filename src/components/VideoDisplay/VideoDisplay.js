@@ -51,7 +51,7 @@ export default function VideoDisplay({ currentVideo }) {
           </div>
         </div>
       </div>
-      <hr />
+      <hr class="display__details--hr" />
 
       <div class="display__description">{description}</div>
 

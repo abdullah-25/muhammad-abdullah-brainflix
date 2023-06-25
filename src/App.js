@@ -17,6 +17,7 @@ function App() {
     <div className="App">
       <Header />
       <VideoDisplay currentVideo={currentVideo} />
+
       <NextVideo
         videos={videos}
         currentVideo={currentVideo}
