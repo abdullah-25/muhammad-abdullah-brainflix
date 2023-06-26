@@ -9,6 +9,14 @@
   padding: 1rem;
   @include mobile-section-header-font($primary-color-Silver);
 }
+.section {
+  @include tablet {
+    padding-left: 1rem;
+  }
+  @include desktop {
+    border-left: 1px solid $secondary-color-Mercury;
+  }
+}
 .container {
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -22,6 +30,11 @@
   &__text-container {
     padding-left: 1rem;
     padding-right: 1rem;
+
+    @include desktop {
+      width: 12rem;
+    }
+
     &--title {
       @include mobile-sub-header-font($secondary-color-BrainFlix-DarkBlack);
       padding-bottom: 0.5rem;

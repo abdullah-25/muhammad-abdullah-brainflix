@@ -1,30 +1,15 @@
-import "./VideoDisplay.scss";
+import "./VideoContent.scss";
 import profilePic from "../../assets/images/Mohan-muruge.jpg";
 import addComment from "../../assets/icons/add_comment.svg";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
-export default function VideoDisplay({ currentVideo }) {
-  const {
-    id,
-    title,
-    image,
-    channel,
-    comments,
-    description,
-    duration,
-    likes,
-    timestamp,
-    video,
-    views,
-  } = currentVideo;
+export default function VideoContent({ currentVideo }) {
+  const { title, channel, comments, description, likes, timestamp, views } =
+    currentVideo;
 
   return (
     <div class="display">
-      <video class="display__video" controls poster={image}>
-        {/* <source src={video}></source> */}
-      </video>
-
       <div class="display__title">{title}</div>
       <hr class="display__first-hr" />
       <div class="display__details">
@@ -85,12 +70,13 @@ export default function VideoDisplay({ currentVideo }) {
             </div>
           </div>
         </div>
-        <hr />
+
         <div class="display__comments-section--comments">
           {comments.map((comment) => (
             <div class="display__comments-section--comment">
+              <hr class="display__comments-section--hr" />
               <div class="display__comments-section--outer-container">
-                <div class="display__comments-section--comment--image"></div>
+                <img class="display__comments-section--comment--image" />
                 <div class="display__comments-section--inner-container">
                   <div class="display__comments-section--comment--namecontainer">
                     <div>{comment.name}</div>
@@ -103,10 +89,10 @@ export default function VideoDisplay({ currentVideo }) {
                   </div>
                 </div>
               </div>
-              <hr />
             </div>
           ))}
         </div>
+        <hr class="last-hr" />
       </div>
     </div>
   );

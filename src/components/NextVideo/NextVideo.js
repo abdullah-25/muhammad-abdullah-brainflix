@@ -6,7 +6,7 @@ export default function NextVideo({ videos, currentVideo, Setter }) {
   });
 
   return (
-    <div>
+    <div class="section">
       <div class="section-title">NEXT VIDEOS</div>
       {inactiveVideos.map((movie) => {
         const { id, title, channel, image } = movie;

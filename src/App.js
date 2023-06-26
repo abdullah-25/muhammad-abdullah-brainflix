@@ -4,7 +4,8 @@ import Header from "./components/Header/Header";
 import NextVideo from "./components/NextVideo/NextVideo";
 import videoDetails from "./assets/data/video-details.json";
 import videos from "./assets/data/videos.json";
-import VideoDisplay from "./components/VideoDisplay/VideoDisplay";
+import VideoContent from "./components/VideoContent/VideoContent";
+import Video from "./components/Video/Video";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
@@ -16,13 +17,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <VideoDisplay currentVideo={currentVideo} />
+      <Video currentVideo={currentVideo} />
+      <div className="outerdiv">
+        <VideoContent currentVideo={currentVideo} />
 
-      <NextVideo
-        videos={videos}
-        currentVideo={currentVideo}
-        Setter={updateCurrentVideo}
-      />
+        <NextVideo
+          videos={videos}
+          currentVideo={currentVideo}
+          Setter={updateCurrentVideo}
+        />
+      </div>
     </div>
   );
 }

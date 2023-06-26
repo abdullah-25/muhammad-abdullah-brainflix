@@ -1,0 +1,23 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.video {
+  margin-top: 1rem;
+  width: 100%;
+  background-size: cover;
+  background-color: $secondary-color-BrainFlix-DarkBlack;
+
+  @include tablet {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @include desktop {
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+    height: auto;
+  }
+}
