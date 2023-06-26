@@ -10,6 +10,7 @@
   width: 100%;
   background-size: cover;
   background-color: $secondary-color-BrainFlix-DarkBlack;
+  aspect-ratio: 16 / 9;
 
   @include tablet {
     padding-left: 1.5rem;
@@ -18,6 +19,5 @@
   @include desktop {
     padding-left: 12.5rem;
     padding-right: 12.5rem;
-    height: auto;
   }
 }
