@@ -1,0 +1,179 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+.upload-container {
+  padding: 1rem;
+  display: block;
+
+  @include tablet {
+    padding: 1.5rem;
+  }
+  @include desktop {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  &__top-divider {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    @include desktop {
+      margin-left: -8rem;
+      margin-right: -8rem;
+    }
+  }
+  &__heading {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    @include mobile-page-header-font($primary-color-BrainFlix-Black);
+
+    @include tablet {
+      @include desktop-tablet-page-header-font($primary-color-BrainFlix-Black);
+    }
+  }
+  &__heading-divider {
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-bottom: 1.5rem;
+      background-color: 1px solid $secondary-color-Mercury;
+      height: 1px;
+    }
+  }
+  &__upload {
+    @include desktop {
+      display: flex;
+    }
+    &__thumbnail-container {
+      &--heading {
+        @include mobile-sub-header-font($primary-color-Silver);
+        padding-bottom: 0.5rem;
+
+        @include tablet {
+          @include desktop-tablet-sub-header-font($primary-color-Silver);
+        }
+      }
+      &--img {
+        width: 100%;
+        border-radius: 0.25rem;
+        height: auto;
+        border-radius: 4px;
+
+        @include tablet {
+          width: 25rem;
+        }
+      }
+    }
+    &__input {
+      padding-top: 1rem;
+
+      @include desktop {
+        padding-left: 2rem;
+        width: 100vw;
+      }
+
+      &--title {
+        &__title {
+          @include mobile-sub-header-font($primary-color-Silver);
+          padding-bottom: 0.5rem;
+          @include tablet {
+            @include desktop-tablet-sub-header-font($primary-color-Silver);
+          }
+        }
+        &__title-form {
+          width: 100%;
+          height: 2rem;
+          background: $secondary-color-Alabaster;
+          padding: 1.2rem;
+          margin-right: 1rem;
+          border: 1px solid $secondary-color-Mercury;
+          border-radius: 0.1875rem;
+        }
+      }
+
+      &--description {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        &__title {
+          @include mobile-sub-header-font($primary-color-Silver);
+          padding-bottom: 0.5rem;
+          @include tablet {
+            @include desktop-tablet-sub-header-font($primary-color-Silver);
+          }
+        }
+        &__description-form {
+          width: 100%;
+          height: 8rem;
+          background: $secondary-color-Alabaster;
+          padding: 1.2rem;
+          margin-right: 1rem;
+          border: 1px solid $secondary-color-Mercury;
+          border-radius: 0.1875rem;
+
+          @include tablet {
+            height: 6rem;
+          }
+        }
+      }
+    }
+  }
+  &__bottom-divider {
+    display: none;
+    @include tablet {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  &__publish {
+    @include tablet {
+      @include desktop-tablet-labels-btn($primary-color-BrainFlix-Blue);
+      display: flex;
+      margin-left: auto;
+      width: 17rem;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+    }
+
+    &--btn {
+      @include mobile-labels-btn-font(white);
+      background: $primary-color-BrainFlix-Blue
+        url(../../assets/icons/publish.svg) left no-repeat;
+      border-radius: 0.25rem;
+      color: white;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      height: 3rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background: $secondary-color-BrainFlix-DarkBlue
+          url(../../assets/icons/publish.svg) left no-repeat;
+      }
+    }
+    &--cancel {
+      padding-top: 3rem;
+      justify-content: center;
+      text-align: center;
+      @include mobile-labels-btn-font($primary-color-BrainFlix-Blue);
+      font-weight: 600;
+
+      @include tablet {
+        margin-right: 4rem;
+        padding: 0;
+        @include desktop-tablet-labels-btn($primary-color-BrainFlix-Blue);
+      }
+      @include desktop {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+}

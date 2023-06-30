@@ -219,6 +219,11 @@
       height: 3rem;
       display: flex;
       align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        background: $secondary-color-BrainFlix-DarkBlue;
+      }
 
       @include tablet {
         height: 2rem;
@@ -237,10 +242,6 @@
       padding-right: 1rem;
     }
 
-    &--comments {
-    }
-    &--comment {
-    }
     &--comment--image {
       width: 2.25rem;
       height: 2.25rem;
