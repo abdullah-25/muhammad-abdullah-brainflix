@@ -1,15 +1,22 @@
 import upload from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
-import { createRoot } from "https://esm.run/react-dom@18/client";
 import confetti from "https://esm.run/canvas-confetti@1";
-
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-use-history";
 export default function UploadPage() {
-  function onClick() {
+  const history = useHistory();
+
+  //wait for 2 seconds then redirect user to home page
+  function delayAndGo(e, path) {
+    e.preventDefault();
+
+    //display confetti on screen
     confetti({
       particleCount: 150,
       spread: 60,
     });
-    //add navigation option here
+
+    setTimeout(() => history.push(path), 2000);
   }
 
   return (
@@ -25,6 +32,7 @@ export default function UploadPage() {
           <img
             className="upload-container__upload__thumbnail-container--img"
             src={upload}
+            alt="thumbail"
           />
         </div>
         <div className="upload-container__upload__input">
@@ -58,11 +66,18 @@ export default function UploadPage() {
       </div>
       <hr className="upload-container__bottom-divider" />
       <div className="upload-container__publish">
-        <button className="upload-container__publish--btn" onClick={onClick}>
-          PUBLISH
-        </button>
+        <Link
+          to="/"
+          style={{ textDecoration: "none" }}
+          onClick={(e) => delayAndGo(e, "/")}
+          className="upload-container__publish--link"
+        >
+          <button className="upload-container__publish--btn">PUBLISH</button>
+        </Link>
 
-        <div className="upload-container__publish--cancel">CANCEL</div>
+        <Link to={`/`} style={{ textDecoration: "none" }}>
+          <div className="upload-container__publish--cancel">CANCEL</div>
+        </Link>
       </div>
     </div>
   );

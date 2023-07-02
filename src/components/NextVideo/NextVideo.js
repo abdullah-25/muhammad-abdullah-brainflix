@@ -18,7 +18,7 @@ export default function NextVideo({ videos, currentVideo, Setter }) {
             key={id}
             class="container"
           >
-            <img src={image} class="container__img" />
+            <img src={image} class="container__img" alt="thumbnail" />
             <div class="container__text-container">
               <div class="container__text-container--title">{title}</div>
               <div class="container__text-container--channel">{channel}</div>

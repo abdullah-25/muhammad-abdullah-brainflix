@@ -1,6 +1,5 @@
 import logo from "../../assets/logo/BrainFlix-logo.svg";
 import profilePic from "../../assets/images/Mohan-muruge.jpg";
-import upload from "../../assets/icons/upload.svg";
 import { Link } from "react-router-dom";
 
 import "./Header.scss";

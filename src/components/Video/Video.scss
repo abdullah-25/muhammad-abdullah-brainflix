@@ -5,19 +5,20 @@
   box-sizing: border-box;
 }
 
-.video {
+.video-container {
   margin-top: 1rem;
-  width: 100%;
-  background-size: cover;
   background-color: $secondary-color-BrainFlix-DarkBlack;
-  aspect-ratio: 16 / 9;
+  &__video {
+    width: 100%;
+    aspect-ratio: 2/1;
 
-  @include tablet {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @include desktop {
-    padding-left: 12.5rem;
-    padding-right: 12.5rem;
+    @include tablet {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    @include desktop {
+      padding-left: 12.5rem;
+      padding-right: 12.5rem;
+    }
   }
 }

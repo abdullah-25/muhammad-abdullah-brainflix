@@ -138,6 +138,9 @@
       flex-direction: row-reverse;
       align-items: flex-end;
     }
+    &--link {
+      width: 100%;
+    }
 
     &--btn {
       @include mobile-labels-btn-font(white);

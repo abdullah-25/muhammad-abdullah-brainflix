@@ -24,6 +24,7 @@ export default function VideoContent({ currentVideo }) {
             <img
               src={viewsIcon}
               class="display__details--views-likes__views--icon"
+              alt="views"
             />
             {views}
           </div>
@@ -31,6 +32,7 @@ export default function VideoContent({ currentVideo }) {
             <img
               src={likesIcon}
               class="display__details--views-likes__likes--icon"
+              alt="likes"
             />
             {likes}
           </div>
@@ -76,7 +78,10 @@ export default function VideoContent({ currentVideo }) {
             <div class="display__comments-section--comment">
               <hr class="display__comments-section--hr" />
               <div class="display__comments-section--outer-container">
-                <img class="display__comments-section--comment--image" />
+                <img
+                  class="display__comments-section--comment--image"
+                  alt="comments-avatar"
+                />
                 <div class="display__comments-section--inner-container">
                   <div class="display__comments-section--comment--namecontainer">
                     <div>{comment.name}</div>
