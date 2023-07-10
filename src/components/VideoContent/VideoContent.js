@@ -53,20 +53,22 @@ export default function VideoContent({ currentVideo }) {
               JOIN THE CONVERSATION
             </div>
             <div class="display__comments-section--comment-input--container">
-              <input
-                name="text"
-                type="text"
-                className="display__comments-section--addcomment"
-                placeholder="Add a new comment"
-              />
-              <button className="display__comments-section--btn">
-                <img
-                  src={addComment}
-                  alt="upload-logo"
-                  className="display__comments-section--btn__upload"
+              <form onSubmit={addComment}>
+                <input
+                  name="text"
+                  type="text"
+                  className="display__comments-section--addcomment"
+                  placeholder="Add a new comment"
                 />
-                COMMENT
-              </button>
+                <button className="display__comments-section--btn">
+                  <img
+                    src={addComment}
+                    alt="upload-logo"
+                    className="display__comments-section--btn__upload"
+                  />
+                  COMMENT
+                </button>
+              </form>
             </div>
           </div>
         </div>
