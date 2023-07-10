@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const url = "https://project-2-api.herokuapp.com/videos";
-const videosURL = "https://project-2-api.herokuapp.com";
+const url = "http://localhost:8080/videos";
+const videosURL = "http://localhost:8080";
 const apiKey = "3e01eaff-cb5c-46b6-817b-e65193e6634a";
 
 export default function HomePage() {
@@ -17,7 +17,8 @@ export default function HomePage() {
   let { id } = params;
   useEffect(() => {
     // Fetching the list of videos from the API
-    axios.get(`${url}?api_key=${apiKey}`).then((response) => {
+    axios.get(`${url}`).then((response) => {
+      // console.log(response);
       // Set the videosAPI state with the response data
       setVideosAPI(response.data);
 

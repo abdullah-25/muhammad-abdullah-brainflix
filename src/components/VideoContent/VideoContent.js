@@ -55,7 +55,7 @@ export default function VideoContent({ currentVideo }) {
               JOIN THE CONVERSATION
             </div>
             <div class="display__comments-section--comment-input--container">
-              <input
+              <textarea
                 name="text"
                 type="text"
                 className="display__comments-section--addcomment"
