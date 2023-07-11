@@ -53,7 +53,10 @@ export default function HomePage() {
     <>
       <Video currentVideo={currentVideoAPI} />
       <div className="outerdiv">
-        <VideoContent currentVideo={currentVideoAPI} />
+        <VideoContent
+          currentVideo={currentVideoAPI}
+          setVideos={setCurrentVideoAPI}
+        />
         <NextVideo videos={videoAPI} currentVideo={currentVideoAPI} />
       </div>
     </>

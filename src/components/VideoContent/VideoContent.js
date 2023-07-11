@@ -1,12 +1,47 @@
 import "./VideoContent.scss";
 import profilePic from "../../assets/images/Mohan-muruge.jpg";
-import addComment from "../../assets/icons/add_comment.svg";
+import CommentIcon from "../../assets/icons/add_comment.svg";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
+import axios from "axios";
 
-export default function VideoContent({ currentVideo }) {
-  const { title, channel, comments, description, likes, timestamp, views } =
+const baseURL = "http://localhost:8080";
+
+export default function VideoContent({ currentVideo, setVideos }) {
+  const { id, title, channel, comments, description, likes, timestamp, views } =
     currentVideo;
+
+  function addComment(e) {
+    e.preventDefault();
+    const name = "Abdullah";
+    const comment = e.target.comment.value;
+
+    axios
+      .post(`${baseURL}/videos/${id}/comments`, { name, comment })
+      .then(() => {
+        // Find the specific video in the videos state array
+
+        axios.get(`${baseURL}/videos/${id}`).then(({ data }) => {
+          setVideos(data);
+        });
+      });
+  }
+
+  function deleteComment(commentId) {
+    axios.delete(`${baseURL}/videos/${id}/comments/${commentId}`).then(() => {
+      axios.get(`${baseURL}/videos/${id}`).then(({ data }) => {
+        setVideos(data);
+      });
+    });
+  }
+
+  function likeComment(commentId) {
+    axios.put(`${baseURL}/videos/${id}/comments/${commentId}`).then(() => {
+      axios.get(`${baseURL}/videos/${id}`).then(({ data }) => {
+        setVideos(data);
+      });
+    });
+  }
 
   return (
     <div class="display">
@@ -55,20 +90,22 @@ export default function VideoContent({ currentVideo }) {
               JOIN THE CONVERSATION
             </div>
             <div class="display__comments-section--comment-input--container">
-              <input
-                name="text"
-                type="text"
-                className="display__comments-section--addcomment"
-                placeholder="Add a new comment"
-              />
-              <button className="display__comments-section--btn">
-                <img
-                  src={addComment}
-                  alt="upload-logo"
-                  className="display__comments-section--btn__upload"
+              <form onSubmit={addComment}>
+                <input
+                  name="comment"
+                  type="text"
+                  className="display__comments-section--addcomment"
+                  placeholder="Add a new comment"
                 />
-                COMMENT
-              </button>
+                <button className="display__comments-section--btn">
+                  <img
+                    src={CommentIcon}
+                    alt="upload-logo"
+                    className="display__comments-section--btn__upload"
+                  />
+                  COMMENT
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -91,6 +128,24 @@ export default function VideoContent({ currentVideo }) {
                   </div>
                   <div class="display__comments-section--comment--text">
                     {comment.comment}
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => {
+                        deleteComment(comment.id);
+                      }}
+                      class="display__comments-section--delete"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => {
+                        likeComment(comment.id);
+                      }}
+                      class="display__comments-section--like"
+                    >
+                      Like {comment.likes}
+                    </button>
                   </div>
                 </div>
               </div>

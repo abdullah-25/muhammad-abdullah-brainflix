@@ -3,7 +3,7 @@ import "./UploadPage.scss";
 import confetti from "https://esm.run/canvas-confetti@1";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-use-history";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const baseURL = "http://localhost:8080";
@@ -16,7 +16,6 @@ export default function UploadPage() {
   //wait for 2 seconds then redirect user to home page
   function delayAndGo(e, path) {
     e.preventDefault();
-    //grab title
 
     //display confetti on screen
     confetti({

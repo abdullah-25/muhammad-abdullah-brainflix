@@ -282,6 +282,18 @@
         @include desktop-tablet-body-font($primary-color-BrainFlix-Black);
       }
     }
+    &--delete {
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    &--like {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
 
